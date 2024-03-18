@@ -1,0 +1,650 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="2023.2" RunE2="T">
+  <Nodes>
+    <Node ToolID="22">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="17" y="5" width="1052" height="618" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>Airport session 1</Caption>
+          <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="25" />
+          <Disabled value="False" />
+          <Folded value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>Airport session 1</AnnotationText>
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="5">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+            <Position x="41" y="54" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Passwords />
+              <File OutputFileName="" RecordLimit="" SearchSubDirs="False" FileFormat="57">C:\Users\User1\Downloads\data-preparation-analysis-alteryx.zip|||02/demos/flight_data_1.csv</File>
+              <FormatSpecificOptions>
+                <HeaderRow>True</HeaderRow>
+                <AllowShareWrite>False</AllowShareWrite>
+                <FileNameEncoding>0</FileNameEncoding>
+                <ImportLine>1</ImportLine>
+                <FieldLen>254</FieldLen>
+                <IgnoreErrors>False</IgnoreErrors>
+                <SingleThreadRead>False</SingleThreadRead>
+                <IgnoreQuotes>DoubleQuotes</IgnoreQuotes>
+                <Delimeter>,</Delimeter>
+                <QuoteRecordBreak>False</QuoteRecordBreak>
+                <FileFormatInner>0</FileFormatInner>
+                <LargeZipFiles>False</LargeZipFiles>
+                <CodePage>28591</CodePage>
+              </FormatSpecificOptions>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>data-preparation-analysis-alteryx.zip
+Query=02/demos/flight_data_1.csv</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="YEAR" size="254" source="File: C:\Users\User1\Downloads\data-preparation-analysis-alteryx.zip|||02\demos\flight_data_1.csv" type="V_String" />
+                <Field name="FL_DATE" size="254" source="File: C:\Users\User1\Downloads\data-preparation-analysis-alteryx.zip|||02\demos\flight_data_1.csv" type="V_String" />
+                <Field name="MKT_CARRIER_AIRLINE_ID" size="254" source="File: C:\Users\User1\Downloads\data-preparation-analysis-alteryx.zip|||02\demos\flight_data_1.csv" type="V_String" />
+                <Field name="MKT_CARRIER" size="254" source="File: C:\Users\User1\Downloads\data-preparation-analysis-alteryx.zip|||02\demos\flight_data_1.csv" type="V_String" />
+                <Field name="MKT_CARRIER_FL_NUM" size="254" source="File: C:\Users\User1\Downloads\data-preparation-analysis-alteryx.zip|||02\demos\flight_data_1.csv" type="V_String" />
+                <Field name="ORIGIN" size="254" source="File: C:\Users\User1\Downloads\data-preparation-analysis-alteryx.zip|||02\demos\flight_data_1.csv" type="V_String" />
+                <Field name="ORIGIN_CITY_NAME" size="254" source="File: C:\Users\User1\Downloads\data-preparation-analysis-alteryx.zip|||02\demos\flight_data_1.csv" type="V_String" />
+                <Field name="ORIGIN_STATE_ABR" size="254" source="File: C:\Users\User1\Downloads\data-preparation-analysis-alteryx.zip|||02\demos\flight_data_1.csv" type="V_String" />
+                <Field name="DEST" size="254" source="File: C:\Users\User1\Downloads\data-preparation-analysis-alteryx.zip|||02\demos\flight_data_1.csv" type="V_String" />
+                <Field name="CRS_DEP_TIME" size="254" source="File: C:\Users\User1\Downloads\data-preparation-analysis-alteryx.zip|||02\demos\flight_data_1.csv" type="V_String" />
+                <Field name="DEP_TIME" size="254" source="File: C:\Users\User1\Downloads\data-preparation-analysis-alteryx.zip|||02\demos\flight_data_1.csv" type="V_String" />
+                <Field name="CRS_ARR_TIME" size="254" source="File: C:\Users\User1\Downloads\data-preparation-analysis-alteryx.zip|||02\demos\flight_data_1.csv" type="V_String" />
+                <Field name="ARR_TIME" size="254" source="File: C:\Users\User1\Downloads\data-preparation-analysis-alteryx.zip|||02\demos\flight_data_1.csv" type="V_String" />
+                <Field name="CANCELLED" size="254" source="File: C:\Users\User1\Downloads\data-preparation-analysis-alteryx.zip|||02\demos\flight_data_1.csv" type="V_String" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+        </Node>
+        <Node ToolID="8">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+            <Position x="41" y="210" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Passwords />
+              <File OutputFileName="" RecordLimit="" SearchSubDirs="False" FileFormat="57">C:\Users\User1\Downloads\data-preparation-analysis-alteryx.zip|||02/demos/flight_data_2.csv</File>
+              <FormatSpecificOptions>
+                <HeaderRow>True</HeaderRow>
+                <AllowShareWrite>False</AllowShareWrite>
+                <FileNameEncoding>0</FileNameEncoding>
+                <ImportLine>1</ImportLine>
+                <FieldLen>254</FieldLen>
+                <IgnoreErrors>False</IgnoreErrors>
+                <SingleThreadRead>False</SingleThreadRead>
+                <IgnoreQuotes>DoubleQuotes</IgnoreQuotes>
+                <Delimeter>,</Delimeter>
+                <QuoteRecordBreak>False</QuoteRecordBreak>
+                <FileFormatInner>0</FileFormatInner>
+                <LargeZipFiles>False</LargeZipFiles>
+                <CodePage>28591</CodePage>
+              </FormatSpecificOptions>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>data-preparation-analysis-alteryx.zip
+Query=02/demos/flight_data_2.csv</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="YEAR" size="254" source="File: C:\Users\User1\Downloads\data-preparation-analysis-alteryx.zip|||02\demos\flight_data_2.csv" type="V_String" />
+                <Field name="FL_DATE" size="254" source="File: C:\Users\User1\Downloads\data-preparation-analysis-alteryx.zip|||02\demos\flight_data_2.csv" type="V_String" />
+                <Field name="MKT_CARRIER" size="254" source="File: C:\Users\User1\Downloads\data-preparation-analysis-alteryx.zip|||02\demos\flight_data_2.csv" type="V_String" />
+                <Field name="MKT_CARRIER_FL_NUM" size="254" source="File: C:\Users\User1\Downloads\data-preparation-analysis-alteryx.zip|||02\demos\flight_data_2.csv" type="V_String" />
+                <Field name="ORIGIN" size="254" source="File: C:\Users\User1\Downloads\data-preparation-analysis-alteryx.zip|||02\demos\flight_data_2.csv" type="V_String" />
+                <Field name="ORIGIN_CITY_NAME" size="254" source="File: C:\Users\User1\Downloads\data-preparation-analysis-alteryx.zip|||02\demos\flight_data_2.csv" type="V_String" />
+                <Field name="ORIGIN_STATE_ABR" size="254" source="File: C:\Users\User1\Downloads\data-preparation-analysis-alteryx.zip|||02\demos\flight_data_2.csv" type="V_String" />
+                <Field name="DEST" size="254" source="File: C:\Users\User1\Downloads\data-preparation-analysis-alteryx.zip|||02\demos\flight_data_2.csv" type="V_String" />
+                <Field name="CRS_DEP_TIME" size="254" source="File: C:\Users\User1\Downloads\data-preparation-analysis-alteryx.zip|||02\demos\flight_data_2.csv" type="V_String" />
+                <Field name="DEP_TIME" size="254" source="File: C:\Users\User1\Downloads\data-preparation-analysis-alteryx.zip|||02\demos\flight_data_2.csv" type="V_String" />
+                <Field name="CRS_ARR_TIME" size="254" source="File: C:\Users\User1\Downloads\data-preparation-analysis-alteryx.zip|||02\demos\flight_data_2.csv" type="V_String" />
+                <Field name="ARR_TIME" size="254" source="File: C:\Users\User1\Downloads\data-preparation-analysis-alteryx.zip|||02\demos\flight_data_2.csv" type="V_String" />
+                <Field name="CANCELLED" size="254" source="File: C:\Users\User1\Downloads\data-preparation-analysis-alteryx.zip|||02\demos\flight_data_2.csv" type="V_String" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+        </Node>
+        <Node ToolID="9">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Union.Union">
+            <Position x="162" y="210" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <AutoResetMode>Custom</AutoResetMode>
+              <MultiMetaInfo>
+                <MetaInfo name="#1">
+                  <RecordInfo>
+                    <Field name="YEAR" size="254" source="File: C:\Users\User1\Downloads\data-preparation-analysis-alteryx.zip|||02\demos\flight_data_1.csv" type="V_String" column="1" />
+                    <Field name="FL_DATE" size="254" source="File: C:\Users\User1\Downloads\data-preparation-analysis-alteryx.zip|||02\demos\flight_data_1.csv" type="V_String" column="2" />
+                    <Field name="MKT_CARRIER_AIRLINE_ID" size="254" source="File: C:\Users\User1\Downloads\data-preparation-analysis-alteryx.zip|||02\demos\flight_data_1.csv" type="V_String" column="3" />
+                    <Field name="MKT_CARRIER" size="254" source="File: C:\Users\User1\Downloads\data-preparation-analysis-alteryx.zip|||02\demos\flight_data_1.csv" type="V_String" column="4" />
+                    <Field name="MKT_CARRIER_FL_NUM" size="254" source="File: C:\Users\User1\Downloads\data-preparation-analysis-alteryx.zip|||02\demos\flight_data_1.csv" type="V_String" column="5" />
+                    <Field name="ORIGIN" size="254" source="File: C:\Users\User1\Downloads\data-preparation-analysis-alteryx.zip|||02\demos\flight_data_1.csv" type="V_String" column="6" />
+                    <Field name="ORIGIN_CITY_NAME" size="254" source="File: C:\Users\User1\Downloads\data-preparation-analysis-alteryx.zip|||02\demos\flight_data_1.csv" type="V_String" column="7" />
+                    <Field name="ORIGIN_STATE_ABR" size="254" source="File: C:\Users\User1\Downloads\data-preparation-analysis-alteryx.zip|||02\demos\flight_data_1.csv" type="V_String" column="8" />
+                    <Field name="DEST" size="254" source="File: C:\Users\User1\Downloads\data-preparation-analysis-alteryx.zip|||02\demos\flight_data_1.csv" type="V_String" column="9" />
+                    <Field name="CRS_DEP_TIME" size="254" source="File: C:\Users\User1\Downloads\data-preparation-analysis-alteryx.zip|||02\demos\flight_data_1.csv" type="V_String" column="10" />
+                    <Field name="DEP_TIME" size="254" source="File: C:\Users\User1\Downloads\data-preparation-analysis-alteryx.zip|||02\demos\flight_data_1.csv" type="V_String" column="11" />
+                    <Field name="CRS_ARR_TIME" size="254" source="File: C:\Users\User1\Downloads\data-preparation-analysis-alteryx.zip|||02\demos\flight_data_1.csv" type="V_String" column="12" />
+                    <Field name="ARR_TIME" size="254" source="File: C:\Users\User1\Downloads\data-preparation-analysis-alteryx.zip|||02\demos\flight_data_1.csv" type="V_String" column="13" />
+                    <Field name="CANCELLED" size="254" source="File: C:\Users\User1\Downloads\data-preparation-analysis-alteryx.zip|||02\demos\flight_data_1.csv" type="V_String" column="14" />
+                  </RecordInfo>
+                </MetaInfo>
+                <MetaInfo name="#2">
+                  <RecordInfo>
+                    <Field name="YEAR" size="254" source="File: C:\Users\User1\Downloads\data-preparation-analysis-alteryx.zip|||02\demos\flight_data_2.csv" type="V_String" column="1" />
+                    <Field name="FL_DATE" size="254" source="File: C:\Users\User1\Downloads\data-preparation-analysis-alteryx.zip|||02\demos\flight_data_2.csv" type="V_String" column="2" />
+                    <Field name="MKT_CARRIER" size="254" source="File: C:\Users\User1\Downloads\data-preparation-analysis-alteryx.zip|||02\demos\flight_data_2.csv" type="V_String" column="4" />
+                    <Field name="MKT_CARRIER_FL_NUM" size="254" source="File: C:\Users\User1\Downloads\data-preparation-analysis-alteryx.zip|||02\demos\flight_data_2.csv" type="V_String" column="5" />
+                    <Field name="ORIGIN" size="254" source="File: C:\Users\User1\Downloads\data-preparation-analysis-alteryx.zip|||02\demos\flight_data_2.csv" type="V_String" column="6" />
+                    <Field name="ORIGIN_CITY_NAME" size="254" source="File: C:\Users\User1\Downloads\data-preparation-analysis-alteryx.zip|||02\demos\flight_data_2.csv" type="V_String" column="7" />
+                    <Field name="ORIGIN_STATE_ABR" size="254" source="File: C:\Users\User1\Downloads\data-preparation-analysis-alteryx.zip|||02\demos\flight_data_2.csv" type="V_String" column="8" />
+                    <Field name="DEST" size="254" source="File: C:\Users\User1\Downloads\data-preparation-analysis-alteryx.zip|||02\demos\flight_data_2.csv" type="V_String" column="9" />
+                    <Field name="CRS_DEP_TIME" size="254" source="File: C:\Users\User1\Downloads\data-preparation-analysis-alteryx.zip|||02\demos\flight_data_2.csv" type="V_String" column="10" />
+                    <Field name="DEP_TIME" size="254" source="File: C:\Users\User1\Downloads\data-preparation-analysis-alteryx.zip|||02\demos\flight_data_2.csv" type="V_String" column="11" />
+                    <Field name="CRS_ARR_TIME" size="254" source="File: C:\Users\User1\Downloads\data-preparation-analysis-alteryx.zip|||02\demos\flight_data_2.csv" type="V_String" column="12" />
+                    <Field name="ARR_TIME" size="254" source="File: C:\Users\User1\Downloads\data-preparation-analysis-alteryx.zip|||02\demos\flight_data_2.csv" type="V_String" column="13" />
+                    <Field name="CANCELLED" size="254" source="File: C:\Users\User1\Downloads\data-preparation-analysis-alteryx.zip|||02\demos\flight_data_2.csv" type="V_String" column="14" />
+                  </RecordInfo>
+                </MetaInfo>
+              </MultiMetaInfo>
+              <ByName_ErrorMode>Warning</ByName_ErrorMode>
+              <ByName_OutputMode>All</ByName_OutputMode>
+              <Mode>ManualDelayed</Mode>
+              <SetOutputOrder value="False" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxUnion" />
+        </Node>
+        <Node ToolID="10">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+            <Position x="354" y="209" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <OrderChanged value="True" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="YEAR" selected="True" />
+                <SelectField field="FL_DATE2" selected="True" rename="FL_DATE" />
+                <SelectField field="FL_DATE" selected="False" type="Date" size="10" />
+                <SelectField field="MKT_CARRIER_AIRLINE_ID" selected="False" />
+                <SelectField field="MKT_CARRIER" selected="True" rename="CARRIER" />
+                <SelectField field="MKT_CARRIER_FL_NUM" selected="True" rename="FL_NUM" />
+                <SelectField field="ORIGIN" selected="True" />
+                <SelectField field="ORIGIN_CITY_NAME" selected="True" />
+                <SelectField field="ORIGIN_STATE_ABR" selected="False" />
+                <SelectField field="DEST" selected="True" rename="DESTINATION" />
+                <SelectField field="CRS_DEP_TIME" selected="True" rename="SCHED DEP" />
+                <SelectField field="DEP_TIME" selected="True" rename="ACTUAL DEP" />
+                <SelectField field="CRS_ARR_TIME" selected="True" rename="SCHED ARR" />
+                <SelectField field="ARR_TIME" selected="True" rename="ACTUAL ARR" />
+                <SelectField field="CANCELLED" selected="True" type="Bool" size="1" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+        </Node>
+        <Node ToolID="11">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+            <Position x="450" y="210" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <TempFile>C:\Users\User1\AppData\Local\Temp\Engine_14500_19edc411c4984e41b6ab6738af752f37_\Engine_14500_40b72783e5d3e2489dc0151c7a063f96~.yxdb</TempFile>
+              <TempFileDataProfiling />
+              <Layout>
+                <ViewMode>Single</ViewMode>
+                <ViewSize value="100" />
+                <View1>
+                  <DefaultTab>Profile</DefaultTab>
+                  <Hints>
+                    <Table />
+                  </Hints>
+                </View1>
+                <View2 />
+              </Layout>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+        </Node>
+        <Node ToolID="12">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+            <Position x="53" y="389" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Passwords />
+              <File OutputFileName="" RecordLimit="" SearchSubDirs="False" FileFormat="57">C:\Users\User1\Downloads\data-preparation-analysis-alteryx.zip|||02/demos/airport_codes.csv</File>
+              <FormatSpecificOptions>
+                <HeaderRow>True</HeaderRow>
+                <AllowShareWrite>False</AllowShareWrite>
+                <FileNameEncoding>0</FileNameEncoding>
+                <ImportLine>1</ImportLine>
+                <FieldLen>254</FieldLen>
+                <IgnoreErrors>False</IgnoreErrors>
+                <SingleThreadRead>False</SingleThreadRead>
+                <IgnoreQuotes>DoubleQuotes</IgnoreQuotes>
+                <Delimeter>,</Delimeter>
+                <QuoteRecordBreak>False</QuoteRecordBreak>
+                <FileFormatInner>0</FileFormatInner>
+                <LargeZipFiles>False</LargeZipFiles>
+                <CodePage>28591</CodePage>
+              </FormatSpecificOptions>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>data-preparation-analysis-alteryx.zip
+Query=02/demos/airport_codes.csv</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="Code" size="254" source="File: C:\Users\User1\Downloads\data-preparation-analysis-alteryx.zip|||02\demos\airport_codes.csv" type="V_String" />
+                <Field name="Description" size="254" source="File: C:\Users\User1\Downloads\data-preparation-analysis-alteryx.zip|||02\demos\airport_codes.csv" type="V_String" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+        </Node>
+        <Node ToolID="13">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+            <Position x="450" y="330" />
+          </GuiSettings>
+          <Properties>
+            <Configuration joinByRecordPos="False">
+              <JoinInfo connection="Left">
+                <Field field="DESTINATION" />
+              </JoinInfo>
+              <JoinInfo connection="Right">
+                <Field field="Code" />
+              </JoinInfo>
+              <SelectConfiguration>
+                <Configuration outputConnection="Join">
+                  <OrderChanged value="True" />
+                  <CommaDecimal value="False" />
+                  <SelectFields>
+                    <SelectField field="Left_YEAR" selected="True" input="Left_" />
+                    <SelectField field="Left_FL_DATE" selected="True" input="Left_" />
+                    <SelectField field="Left_CARRIER" selected="True" input="Left_" />
+                    <SelectField field="Left_FL_NUM" selected="True" input="Left_" />
+                    <SelectField field="Left_ORIGIN" selected="True" input="Left_" />
+                    <SelectField field="Left_ORIGIN_CITY_NAME" selected="True" input="Left_" />
+                    <SelectField field="Left_DESTINATION" selected="True" input="Left_" />
+                    <SelectField field="Right_Description" selected="True" rename="DEST_CITY_NAME" input="Right_" />
+                    <SelectField field="Left_SCHED DEP" selected="True" input="Left_" />
+                    <SelectField field="Left_ACTUAL DEP" selected="True" input="Left_" />
+                    <SelectField field="Left_SCHED ARR" selected="True" input="Left_" />
+                    <SelectField field="Left_ACTUAL ARR" selected="True" input="Left_" />
+                    <SelectField field="Left_CANCELLED" selected="True" input="Left_" />
+                    <SelectField field="Right_Code" selected="False" input="Right_" />
+                    <SelectField field="Left_FL_DATE2" selected="True" input="Left_" />
+                    <SelectField field="*Unknown" selected="True" />
+                  </SelectFields>
+                </Configuration>
+              </SelectConfiguration>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+        </Node>
+        <Node ToolID="14">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Union.Union">
+            <Position x="546" y="330" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <ByName_ErrorMode>Warning</ByName_ErrorMode>
+              <ByName_OutputMode>All</ByName_OutputMode>
+              <Mode>ByName</Mode>
+              <SetOutputOrder value="False" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxUnion" />
+        </Node>
+        <Node ToolID="15">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+            <Position x="474" y="462" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Passwords />
+              <File OutputFileName="" RecordLimit="" SearchSubDirs="False" FileFormat="57">C:\Users\User1\Downloads\data-preparation-analysis-alteryx.zip|||02/demos/carrier_codes.csv</File>
+              <FormatSpecificOptions>
+                <HeaderRow>True</HeaderRow>
+                <AllowShareWrite>False</AllowShareWrite>
+                <FileNameEncoding>0</FileNameEncoding>
+                <ImportLine>1</ImportLine>
+                <FieldLen>254</FieldLen>
+                <IgnoreErrors>False</IgnoreErrors>
+                <SingleThreadRead>False</SingleThreadRead>
+                <IgnoreQuotes>DoubleQuotes</IgnoreQuotes>
+                <Delimeter>,</Delimeter>
+                <QuoteRecordBreak>False</QuoteRecordBreak>
+                <FileFormatInner>0</FileFormatInner>
+                <LargeZipFiles>False</LargeZipFiles>
+                <CodePage>28591</CodePage>
+              </FormatSpecificOptions>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>data-preparation-analysis-alteryx.zip
+Query=02/demos/carrier_codes.csv</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="Code" size="254" source="File: C:\Users\User1\Downloads\data-preparation-analysis-alteryx.zip|||02\demos\carrier_codes.csv" type="V_String" />
+                <Field name="Description" size="254" source="File: C:\Users\User1\Downloads\data-preparation-analysis-alteryx.zip|||02\demos\carrier_codes.csv" type="V_String" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+        </Node>
+        <Node ToolID="16">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+            <Position x="642" y="414" />
+          </GuiSettings>
+          <Properties>
+            <Configuration joinByRecordPos="False">
+              <JoinInfo connection="Left">
+                <Field field="CARRIER" />
+              </JoinInfo>
+              <JoinInfo connection="Right">
+                <Field field="Code" />
+              </JoinInfo>
+              <SelectConfiguration>
+                <Configuration outputConnection="Join">
+                  <OrderChanged value="True" />
+                  <CommaDecimal value="False" />
+                  <SelectFields>
+                    <SelectField field="Left_YEAR" selected="True" input="Left_" />
+                    <SelectField field="Left_FL_DATE" selected="True" input="Left_" />
+                    <SelectField field="Left_CARRIER" selected="True" input="Left_" />
+                    <SelectField field="Right_Description" selected="True" rename="CARRIER_NAME" input="Right_" />
+                    <SelectField field="Left_FL_NUM" selected="True" input="Left_" />
+                    <SelectField field="Left_ORIGIN" selected="True" input="Left_" />
+                    <SelectField field="Left_ORIGIN_CITY_NAME" selected="True" input="Left_" />
+                    <SelectField field="Left_DESTINATION" selected="True" input="Left_" />
+                    <SelectField field="Left_DEST_CITY_NAME" selected="True" input="Left_" />
+                    <SelectField field="Left_SCHED DEP" selected="True" input="Left_" />
+                    <SelectField field="Left_ACTUAL DEP" selected="True" input="Left_" />
+                    <SelectField field="Left_SCHED ARR" selected="True" input="Left_" />
+                    <SelectField field="Left_ACTUAL ARR" selected="True" input="Left_" />
+                    <SelectField field="Left_CANCELLED" selected="True" input="Left_" />
+                    <SelectField field="Right_Code" selected="False" input="Right_" />
+                    <SelectField field="*Unknown" selected="True" />
+                  </SelectFields>
+                </Configuration>
+              </SelectConfiguration>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+        </Node>
+        <Node ToolID="17">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Union.Union">
+            <Position x="750" y="414" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <ByName_ErrorMode>Warning</ByName_ErrorMode>
+              <ByName_OutputMode>All</ByName_OutputMode>
+              <Mode>ByName</Mode>
+              <SetOutputOrder value="False" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxUnion" />
+        </Node>
+        <Node ToolID="18">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
+            <Position x="942" y="414" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <File FileFormat="19" MaxRecords="">C:\Users\User1\Desktop\Alteryx\Airport_prepared_Initial.yxdb</File>
+              <Passwords />
+              <Disable>False</Disable>
+              <FormatSpecificOptions>
+                <NoSpatialIndex>False</NoSpatialIndex>
+                <SaveSource>True</SaveSource>
+                <WriteCompatibleVersion>False</WriteCompatibleVersion>
+              </FormatSpecificOptions>
+              <MultiFile value="False" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>Airport_prepared_Initial.yxdb</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
+        </Node>
+        <Node ToolID="19">
+          <GuiSettings>
+            <Position x="846" y="426" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Value name="Check Box (135)">False</Value>
+              <Value name="Check Box (136)">False</Value>
+              <Value name="List Box (11)">""</Value>
+              <Value name="Check Box (84)">True</Value>
+              <Value name="Check Box (117)">True</Value>
+              <Value name="Check Box (15)">True</Value>
+              <Value name="Check Box (109)">False</Value>
+              <Value name="Check Box (122)">False</Value>
+              <Value name="Check Box (53)">False</Value>
+              <Value name="Check Box (58)">False</Value>
+              <Value name="Check Box (70)">False</Value>
+              <Value name="Check Box (77)">False</Value>
+              <Value name="Drop Down (81)">upper</Value>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings Macro="Cleanse.yxmc" />
+        </Node>
+        <Node ToolID="20">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DateTime.DateTime">
+            <Position x="258" y="209" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <IsFrom value="False" />
+              <InputFieldName>FL_DATE</InputFieldName>
+              <Language>English</Language>
+              <Format>dd/MM/yyyy hh:mm:ss</Format>
+              <OutputFieldName>FL_DATE</OutputFieldName>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>Convert FL_DATE From:
+dd/MM/yyyy hh:mm:ss</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDateTime" />
+        </Node>
+        <Node ToolID="21">
+          <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+            <Position x="522" y="90" width="100" height="40" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Text>This is the session 1 workflow- Airport Data</Text>
+              <Font name="Arial" size="8.25" style="0" />
+              <TextColor name="Black" />
+              <FillColor name="White" />
+              <Shape shape="0" />
+              <Justification Justification="4" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+        </Node>
+      </ChildNodes>
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection name="#1">
+      <Origin ToolID="5" Connection="Output" />
+      <Destination ToolID="9" Connection="Input" />
+    </Connection>
+    <Connection name="#2">
+      <Origin ToolID="8" Connection="Output" />
+      <Destination ToolID="9" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="9" Connection="Output" />
+      <Destination ToolID="20" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="10" Connection="Output" />
+      <Destination ToolID="11" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="10" Connection="Output" />
+      <Destination ToolID="13" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="12" Connection="Output" />
+      <Destination ToolID="13" Connection="Right" />
+    </Connection>
+    <Connection name="#1">
+      <Origin ToolID="13" Connection="Join" />
+      <Destination ToolID="14" Connection="Input" />
+    </Connection>
+    <Connection name="#2">
+      <Origin ToolID="13" Connection="Left" />
+      <Destination ToolID="14" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="14" Connection="Output" />
+      <Destination ToolID="16" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="15" Connection="Output" />
+      <Destination ToolID="16" Connection="Right" />
+    </Connection>
+    <Connection name="#1">
+      <Origin ToolID="16" Connection="Join" />
+      <Destination ToolID="17" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="17" Connection="Output" />
+      <Destination ToolID="19" Connection="Input2" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="19" Connection="Output26" />
+      <Destination ToolID="18" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="20" Connection="Output" />
+      <Destination ToolID="10" Connection="Input" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <RunWithE2 value="True" />
+    <PredictiveToolsCodePage value="1252" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="False" />
+    <ShowConnectionStatusIsOn value="True" />
+    <ShowConnectionStatusOnlyWhenRunning value="True" />
+    <ZoomLevel value="0" />
+    <LayoutType>Horizontal</LayoutType>
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name>Airport_workflow_Initial</Name>
+      <Description />
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author />
+      <Company />
+      <Copyright />
+      <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
+      <WorkflowId value="af30c0c8-e240-4e2c-98af-f27e00d6c034" />
+      <Telemetry>
+        <PreviousWorkflowId value="ac3fe16a-5582-4601-92d6-fc4405126a66" />
+        <OriginWorkflowId value="94f3e9c3-508f-4e6b-a90b-c1d47661ea4e" />
+      </Telemetry>
+      <PlatformWorkflowId value="" />
+    </MetaInfo>
+    <Events>
+      <Enabled value="True" />
+    </Events>
+  </Properties>
+</AlteryxDocument>

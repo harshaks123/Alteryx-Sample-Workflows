@@ -1,0 +1,1898 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="2023.2">
+  <Nodes>
+    <Node ToolID="4">
+      <GuiSettings Plugin="AlteryxSpatialPluginsGui.CreatePoints.CreatePoints">
+        <Position x="259" y="139" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Fields fieldX="Longitude" fieldY="Latitude" />
+          <Mode>Double</Mode>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxCreatePoints" />
+    </Node>
+    <Node ToolID="5">
+      <GuiSettings Plugin="AlteryxSpatialPluginsGui.TradeArea.TradeArea">
+        <Position x="355" y="139" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SpatialObj field="Centroid" includeOut="True" />
+          <Units units="Miles" noOverlap="False" />
+          <Radius_FromField value="False" />
+          <Radii>0.15</Radii>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>0.15 Miles</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxTradeArea" />
+    </Node>
+    <Node ToolID="7">
+      <GuiSettings Plugin="AlteryxSpatialPluginsGui.PolyBuild.PolyBuild">
+        <Position x="355" y="235" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SpatialObj field="Centroid" />
+          <GroupField field="" />
+          <BuildType>ConvexHull</BuildType>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxPolyBuild" />
+    </Node>
+    <Node ToolID="8">
+      <GuiSettings Plugin="AlteryxSpatialPluginsGui.CreatePoints.CreatePoints">
+        <Position x="259" y="235" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Fields fieldX="Longitude" fieldY="Latitude" />
+          <Mode>Double</Mode>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxCreatePoints" />
+    </Node>
+    <Node ToolID="9">
+      <GuiSettings Plugin="AlteryxSpatialPluginsGui.SpatialMatch.SpatialMatch">
+        <Position x="547" y="175" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Target SpatialObj="SpatialObject_TradeArea" />
+          <Universe SpatialObj="SpatialObj_Built" />
+          <Method method="Intersects" />
+          <SelectConfiguration>
+            <Configuration outputConnection="Matched">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+          <IntersectPoly value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>SpatialObject_TradeArea Where Target Intersects Universe SpatialObj_Built</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSpatialMatch" />
+    </Node>
+    <Node ToolID="10">
+      <GuiSettings Plugin="AlteryxSpatialPluginsGui.SpatialProcess.SpatialProcess">
+        <Position x="643" y="163" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SpatialObjFields field1="SpatialObject_TradeArea" field2="SpatialObj_Built" />
+          <Action action="Intersection" noEmpty="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Intersection</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSpatialProcess" />
+    </Node>
+    <Node ToolID="11">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="739" y="163" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="SpatialObject_TradeArea" selected="True" rename="TradeArea" />
+            <SelectField field="SpatialObj_Built" selected="True" rename="DownTown" />
+            <SelectField field="SpatialObj_Process" selected="True" rename="Intersection" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="12">
+      <GuiSettings Plugin="AlteryxSpatialPluginsGui.SpatialInfo.SpatialInfo">
+        <Position x="835" y="163" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SpatialObj field="DownTown" />
+          <SelectedItems>
+            <Item name="AreaMi" />
+          </SelectedItems>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSpatialInfo" />
+    </Node>
+    <Node ToolID="13">
+      <GuiSettings Plugin="AlteryxSpatialPluginsGui.SpatialInfo.SpatialInfo">
+        <Position x="931" y="163" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SpatialObj field="Intersection" />
+          <SelectedItems>
+            <Item name="AreaMi" />
+          </SelectedItems>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSpatialInfo" />
+    </Node>
+    <Node ToolID="14">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+        <Position x="439" y="283" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <TempFile>C:\Users\User1\AppData\Local\Temp\Engine_13600_11e2f0c9cda948ba958939dd84152761_\Engine_1588_8756918b76ba489ba6cce610c7398b00_.yxdb</TempFile>
+          <TempFileDataProfiling />
+          <Layout>
+            <ViewMode>Single</ViewMode>
+            <ViewSize value="100" />
+            <View1>
+              <DefaultTab>Map</DefaultTab>
+              <Hints>
+                <Map>
+                  <BaseMap>[No Base Map]</BaseMap>
+                </Map>
+                <Table />
+              </Hints>
+            </View1>
+            <View2 />
+          </Layout>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+    </Node>
+    <Node ToolID="15">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+        <Position x="343" y="283" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <TempFile>C:\Users\User1\AppData\Local\Temp\Engine_13600_11e2f0c9cda948ba958939dd84152761_\Engine_1588_78ee6ba5e5de4735a96fd82d5db39533_.yxdb</TempFile>
+          <TempFileDataProfiling />
+          <Layout>
+            <ViewMode>Single</ViewMode>
+            <ViewSize value="100" />
+            <View1>
+              <DefaultTab>Map</DefaultTab>
+              <Hints>
+                <Map>
+                  <BaseMap>[No Base Map]</BaseMap>
+                </Map>
+                <Table />
+              </Hints>
+            </View1>
+            <View2 />
+          </Layout>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+    </Node>
+    <Node ToolID="16">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+        <Position x="739" y="307" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <TempFile>C:\Users\User1\AppData\Local\Temp\Engine_13600_11e2f0c9cda948ba958939dd84152761_\Engine_1588_6603850d96ac470988b5f7f8c6e08146_.yxdb</TempFile>
+          <TempFileDataProfiling />
+          <Layout>
+            <ViewMode>Single</ViewMode>
+            <ViewSize value="100" />
+            <View1>
+              <DefaultTab>Map</DefaultTab>
+              <Hints>
+                <Map>
+                  <BaseMap>[No Base Map]</BaseMap>
+                </Map>
+                <Table />
+              </Hints>
+            </View1>
+            <View2 />
+          </Layout>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+    </Node>
+    <Node ToolID="17">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+        <Position x="535" y="55" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <TempFile>C:\Users\User1\AppData\Local\Temp\Engine_13600_11e2f0c9cda948ba958939dd84152761_\Engine_1588_5f5abd08c92d4af8be6d3cbaf0aba649_.yxdb</TempFile>
+          <TempFileDataProfiling />
+          <Layout>
+            <ViewMode>Single</ViewMode>
+            <ViewSize value="100" />
+            <View1>
+              <DefaultTab>Map</DefaultTab>
+              <Hints>
+                <Map>
+                  <BaseMap>[No Base Map]</BaseMap>
+                </Map>
+                <Table />
+              </Hints>
+            </View1>
+            <View2 />
+          </Layout>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+    </Node>
+    <Node ToolID="19">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="1027" y="151" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="([AreaSqMi2]/ [AreaSqMi] )* 100" field="Per Overlap" size="1073741823" type="V_WString" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText><![CDATA[Per Overlap = ([AreaSqMi2]/ [AreaSqMi] )* 100
+]]></DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="20">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Sort.Sort">
+        <Position x="1123" y="151" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SortInfo locale="1033">
+            <Field field="Per Overlap" order="Descending" />
+          </SortInfo>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Per Overlap - Descending</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSort" />
+    </Node>
+    <Node ToolID="27">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="186" y="78" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File OutputFileName="" RecordLimit="" SearchSubDirs="False" FileFormat="25">C:\Users\User1\Downloads\4701229_YAHB700X.xlsx|||`Sheet1$`</File>
+          <FormatSpecificOptions>
+            <FirstRowData>False</FirstRowData>
+            <ImportLine>1</ImportLine>
+          </FormatSpecificOptions>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>4701229_YAHB700X.xlsx
+Query=`Sheet1$`</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Parking Lot Name" size="255" source="File: C:\Users\User1\Downloads\4701229_YAHB700X.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Latitude" source="File: C:\Users\User1\Downloads\4701229_YAHB700X.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="Longitude" source="File: C:\Users\User1\Downloads\4701229_YAHB700X.xlsx|||`Sheet1$`" type="Double" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="28">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="186" y="282" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File OutputFileName="" RecordLimit="" SearchSubDirs="False" FileFormat="25">C:\Users\User1\Downloads\4701229_3ZDS053E.xlsx|||`Sheet1$`</File>
+          <FormatSpecificOptions>
+            <FirstRowData>False</FirstRowData>
+            <ImportLine>1</ImportLine>
+          </FormatSpecificOptions>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>4701229_3ZDS053E.xlsx
+Query=`Sheet1$`</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Downtown Coordinates" source="File: C:\Users\User1\Downloads\4701229_3ZDS053E.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="Longitude" source="File: C:\Users\User1\Downloads\4701229_3ZDS053E.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="Latitude" source="File: C:\Users\User1\Downloads\4701229_3ZDS053E.xlsx|||`Sheet1$`" type="Double" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="29">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+        <Position x="1206" y="162" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <TempFile>C:\Users\User1\AppData\Local\Temp\Engine_13600_11e2f0c9cda948ba958939dd84152761_\Engine_1588_bc8ac4714a344bdfae3a537b717a6045_.yxdb</TempFile>
+          <TempFileDataProfiling />
+          <Layout>
+            <ViewMode>Single</ViewMode>
+            <ViewSize value="100" />
+            <View1>
+              <DefaultTab>Map</DefaultTab>
+              <Hints>
+                <Map>
+                  <BaseMap>Alteryx_Light</BaseMap>
+                </Map>
+                <Table />
+              </Hints>
+            </View1>
+            <View2 />
+          </Layout>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+    </Node>
+    <Node ToolID="30">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="150" y="426" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File OutputFileName="" RecordLimit="" SearchSubDirs="False" FileFormat="25">C:\Users\User1\Downloads\4701229_YMUYH95N.xlsx|||`Sheet1$`</File>
+          <FormatSpecificOptions>
+            <FirstRowData>False</FirstRowData>
+            <ImportLine>1</ImportLine>
+          </FormatSpecificOptions>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>4701229_YMUYH95N.xlsx
+Query=`Sheet1$`</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Latitude" source="File: C:\Users\User1\Downloads\4701229_YMUYH95N.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="Longitude" source="File: C:\Users\User1\Downloads\4701229_YMUYH95N.xlsx|||`Sheet1$`" type="Double" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="31">
+      <GuiSettings Plugin="AlteryxSpatialPluginsGui.CreatePoints.CreatePoints">
+        <Position x="246" y="438" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Fields fieldX="Longitude" fieldY="Latitude" />
+          <Mode>Double</Mode>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxCreatePoints" />
+    </Node>
+    <Node ToolID="32">
+      <GuiSettings Plugin="AlteryxSpatialPluginsGui.FindNearest.FindNearest">
+        <Position x="390" y="438" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Target SpatialObj="Centroid" />
+          <Universe SpatialObj="Centroid" />
+          <HowMany value="1" />
+          <MaxDistance value="20" />
+          <MaxDistanceUnits>Miles</MaxDistanceUnits>
+          <Ignore0 value="False" />
+          <DriveTimeDataSet>Latest</DriveTimeDataSet>
+          <SelectConfiguration>
+            <Configuration outputConnection="Matched">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Universe_Latitude" selected="True" rename="Universe_Latitude" input="Universe_" />
+                <SelectField field="Universe_Longitude" selected="True" rename="Universe_Longitude" input="Universe_" />
+                <SelectField field="Universe_Centroid" selected="True" rename="Universe_Centroid" input="Universe_" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxFindNearest" />
+    </Node>
+    <Node ToolID="25">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="54" y="54" width="118" height="133" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>Input1</Caption>
+          <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="25" />
+          <Disabled value="False" />
+          <Folded value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="23">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.TextInput.TextInput">
+            <Position x="79" y="103" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <NumRows value="228" />
+              <Fields>
+                <Field name="Parking Lot Name" />
+                <Field name="Latitude" />
+                <Field name="Longitude" />
+              </Fields>
+              <Data>
+                <r>
+                  <c>285 Whalers Walk Parking</c>
+                  <c>33.7177007</c>
+                  <c>-118.2810826</c>
+                </r>
+                <r>
+                  <c>Parking Concepts</c>
+                  <c>33.7319053</c>
+                  <c>-118.2761893</c>
+                </r>
+                <r>
+                  <c>922 Sampson Way Parking</c>
+                  <c>33.7331429</c>
+                  <c>-118.2782241</c>
+                </r>
+                <r>
+                  <c>Centre Street Lofts</c>
+                  <c>33.7382828</c>
+                  <c>-118.2828802</c>
+                </r>
+                <r>
+                  <c>5970 Palos Verdes Dr S Parking</c>
+                  <c>33.7437729</c>
+                  <c>-118.3812524</c>
+                </r>
+                <r>
+                  <c>World Cruise Center</c>
+                  <c>33.7448458</c>
+                  <c>-118.2782287</c>
+                </r>
+                <r>
+                  <c>Harbor Beacon Park &amp; Ride</c>
+                  <c>33.747188</c>
+                  <c>-118.280754</c>
+                </r>
+                <r>
+                  <c>Catalina Island Express Terminal</c>
+                  <c>33.7496756</c>
+                  <c>-118.2763812</c>
+                </r>
+                <r>
+                  <c>Electric Charging Station</c>
+                  <c>33.7706052</c>
+                  <c>-118.2656308</c>
+                </r>
+                <r>
+                  <c>The Pike Bar</c>
+                  <c>33.7713832</c>
+                  <c>-118.1691244</c>
+                </r>
+                <r>
+                  <c>Pyramid Parking Structure</c>
+                  <c>33.7858946</c>
+                  <c>-118.1157511</c>
+                </r>
+                <r>
+                  <c>Palo Verde South Parking Structure</c>
+                  <c>33.7860546</c>
+                  <c>-118.1094137</c>
+                </r>
+                <r>
+                  <c>Par 4 Valet Parking Services</c>
+                  <c>33.787959</c>
+                  <c>-118.336632</c>
+                </r>
+                <r>
+                  <c>Kaiser Permanente</c>
+                  <c>33.7893741</c>
+                  <c>-118.2943823</c>
+                </r>
+                <r>
+                  <c>LAZ Parking</c>
+                  <c>33.7901187</c>
+                  <c>-118.1624437</c>
+                </r>
+                <r>
+                  <c>Long Beach Memorial Medical Center - Miller Children's Hospital</c>
+                  <c>33.806698</c>
+                  <c>-118.1878849</c>
+                </r>
+                <r>
+                  <c>Willow Blue Line Station</c>
+                  <c>33.8070951</c>
+                  <c>-118.1902099</c>
+                </r>
+                <r>
+                  <c>Standard Parking</c>
+                  <c>33.80847</c>
+                  <c>-118.18459</c>
+                </r>
+                <r>
+                  <c>215 Paseo De La Playa Parking</c>
+                  <c>33.8125863</c>
+                  <c>-118.3907723</c>
+                </r>
+                <r>
+                  <c>Pay and Display</c>
+                  <c>33.8140598</c>
+                  <c>-118.3907368</c>
+                </r>
+                <r>
+                  <c>Automac Parking Inc</c>
+                  <c>33.818714</c>
+                  <c>-118.17989</c>
+                </r>
+                <r>
+                  <c>Long Beach Airport Valet</c>
+                  <c>33.8189798</c>
+                  <c>-118.1442118</c>
+                </r>
+                <r>
+                  <c>Cell Phone Waiting Lot - Long Beach Airport</c>
+                  <c>33.8191957</c>
+                  <c>-118.1385213</c>
+                </r>
+                <r>
+                  <c>Walmart Parking Lot Electric Charging Station</c>
+                  <c>33.8304815</c>
+                  <c>-118.1586061</c>
+                </r>
+                <r>
+                  <c>3550 W Carson St Garage</c>
+                  <c>33.8309455</c>
+                  <c>-118.3507166</c>
+                </r>
+                <r>
+                  <c>Del Amo Fashion Center Parking Garage</c>
+                  <c>33.8349359</c>
+                  <c>-118.3486946</c>
+                </r>
+                <r>
+                  <c>Bixby Executive Center</c>
+                  <c>33.8369625</c>
+                  <c>-118.1854722</c>
+                </r>
+                <r>
+                  <c>C S I Paving Inc</c>
+                  <c>33.8371785</c>
+                  <c>-118.3521302</c>
+                </r>
+                <r>
+                  <c>Lakewood Center Mall</c>
+                  <c>33.8489518</c>
+                  <c>-118.1401824</c>
+                </r>
+                <r>
+                  <c>Harbor Gateway Transit Center</c>
+                  <c>33.8697504</c>
+                  <c>-118.2879203</c>
+                </r>
+                <r>
+                  <c>Compton Courthouse Parking</c>
+                  <c>33.8927303</c>
+                  <c>-118.2261005</c>
+                </r>
+                <r>
+                  <c>Redondo Beach Park/Ride</c>
+                  <c>33.8942015</c>
+                  <c>-118.368971</c>
+                </r>
+                <r>
+                  <c>Redondo Beach Green Line Station</c>
+                  <c>33.8951988</c>
+                  <c>-118.3706314</c>
+                </r>
+                <r>
+                  <c>Rosecrans Station Park &amp; Ride</c>
+                  <c>33.9014415</c>
+                  <c>-118.2857662</c>
+                </r>
+                <r>
+                  <c>California Parking Systems Inc</c>
+                  <c>33.902158</c>
+                  <c>-118.369227</c>
+                </r>
+                <r>
+                  <c>Long Beach Blvd / I-105</c>
+                  <c>33.9240487</c>
+                  <c>-118.2097349</c>
+                </r>
+                <r>
+                  <c>Crenshaw Station Park &amp; Ride</c>
+                  <c>33.92418</c>
+                  <c>-118.3282484</c>
+                </r>
+                <r>
+                  <c>Willowbrook Park And Ride Parking Lot</c>
+                  <c>33.9275369</c>
+                  <c>-118.2396369</c>
+                </r>
+                <r>
+                  <c>Avalon Green Line Park &amp; Ride</c>
+                  <c>33.9280865</c>
+                  <c>-118.2636641</c>
+                </r>
+                <r>
+                  <c>Imperial/Wilmington/Rosa Parks Blue/Green Line Station</c>
+                  <c>33.9284753</c>
+                  <c>-118.2386499</c>
+                </r>
+                <r>
+                  <c>Harbor Freeway Green Line Station Park &amp; Ride</c>
+                  <c>33.92867</c>
+                  <c>-118.2819094</c>
+                </r>
+                <r>
+                  <c>SP+ Parking @ 105 Airport Parking</c>
+                  <c>33.9287044</c>
+                  <c>-118.3953644</c>
+                </r>
+                <r>
+                  <c>Aviation Green Line Station Park &amp; Ride</c>
+                  <c>33.929908</c>
+                  <c>-118.377669</c>
+                </r>
+                <r>
+                  <c>Mega Airport Parking</c>
+                  <c>33.9322802</c>
+                  <c>-118.3507116</c>
+                </r>
+                <r>
+                  <c>Fox Auto Parks</c>
+                  <c>33.944233</c>
+                  <c>-118.371218</c>
+                </r>
+                <r>
+                  <c>Kenneth Hahn Blue Line Station</c>
+                  <c>33.9452185</c>
+                  <c>-118.2434527</c>
+                </r>
+                <r>
+                  <c>The Parking Spot Century</c>
+                  <c>33.9459144</c>
+                  <c>-118.3804536</c>
+                </r>
+                <r>
+                  <c>ValuePark LAX</c>
+                  <c>33.9459244</c>
+                  <c>-118.3697545</c>
+                </r>
+                <r>
+                  <c>Towne Park Ltd</c>
+                  <c>33.946123</c>
+                  <c>-118.3950581</c>
+                </r>
+                <r>
+                  <c>Airport Spectrum LAX Parking</c>
+                  <c>33.9463956</c>
+                  <c>-118.3827797</c>
+                </r>
+                <r>
+                  <c>Park 'N Fly @ Park One</c>
+                  <c>33.9470088</c>
+                  <c>-118.3979895</c>
+                </r>
+                <r>
+                  <c>Lax Parking Curb Express</c>
+                  <c>33.9471303</c>
+                  <c>-118.3955686</c>
+                </r>
+                <r>
+                  <c>Sunrise LAX Airport Parking</c>
+                  <c>33.9474644</c>
+                  <c>-118.3930454</c>
+                </r>
+                <r>
+                  <c>Sams Parking</c>
+                  <c>33.949295</c>
+                  <c>-118.3808202</c>
+                </r>
+                <r>
+                  <c>Economy Public Parking Lot C</c>
+                  <c>33.9507869</c>
+                  <c>-118.3922114</c>
+                </r>
+                <r>
+                  <c>The Parking Spot Sepulveda</c>
+                  <c>33.9539331</c>
+                  <c>-118.3964423</c>
+                </r>
+                <r>
+                  <c>Airport Valet Of LAX</c>
+                  <c>33.9553942</c>
+                  <c>-118.3965397</c>
+                </r>
+                <r>
+                  <c>Marina del Rey #13</c>
+                  <c>33.9683756</c>
+                  <c>-118.4539887</c>
+                </r>
+                <r>
+                  <c>Lot R</c>
+                  <c>33.9713635</c>
+                  <c>-118.4146108</c>
+                </r>
+                <r>
+                  <c>Runway Parking Structure</c>
+                  <c>33.9770366</c>
+                  <c>-118.4173063</c>
+                </r>
+                <r>
+                  <c>Marina del Rey Public Parking Lot 10</c>
+                  <c>33.9812817</c>
+                  <c>-118.4590407</c>
+                </r>
+                <r>
+                  <c>Marina del Rey Public Parking Lot 9</c>
+                  <c>33.9823021</c>
+                  <c>-118.4562887</c>
+                </r>
+                <r>
+                  <c>United Valet Parking, Inc.</c>
+                  <c>33.9834968</c>
+                  <c>-118.3877449</c>
+                </r>
+                <r>
+                  <c>Ladot Lot 731</c>
+                  <c>33.9849687</c>
+                  <c>-118.4695458</c>
+                </r>
+                <r>
+                  <c>Venice Beach</c>
+                  <c>33.9855269</c>
+                  <c>-118.4686714</c>
+                </r>
+                <r>
+                  <c>ÐÐ°ÑÐºÐ¾Ð²ÐºÐ°</c>
+                  <c>33.9945752</c>
+                  <c>-118.4800395</c>
+                </r>
+                <r>
+                  <c>3110 Main St. Plaza</c>
+                  <c>33.997444</c>
+                  <c>-118.4794164</c>
+                </r>
+                <r>
+                  <c>Lot 11</c>
+                  <c>34.0038843</c>
+                  <c>-118.4861685</c>
+                </r>
+                <r>
+                  <c>Los Angeles Marathon Parking</c>
+                  <c>34.0058596</c>
+                  <c>-118.4899213</c>
+                </r>
+                <r>
+                  <c>Central Parking</c>
+                  <c>34.0059895</c>
+                  <c>-118.4899398</c>
+                </r>
+                <r>
+                  <c>Parking Structure 6</c>
+                  <c>34.0143781</c>
+                  <c>-118.4958402</c>
+                </r>
+                <r>
+                  <c>Public Parking</c>
+                  <c>34.014397</c>
+                  <c>-118.496092</c>
+                </r>
+                <r>
+                  <c>Central Parking</c>
+                  <c>34.0151844</c>
+                  <c>-118.4943522</c>
+                </r>
+                <r>
+                  <c>1444 4th Street</c>
+                  <c>34.0153727</c>
+                  <c>-118.4942669</c>
+                </r>
+                <r>
+                  <c>Parking Structure #4</c>
+                  <c>34.0160599</c>
+                  <c>-118.4978053</c>
+                </r>
+                <r>
+                  <c>Central Parking</c>
+                  <c>34.016484</c>
+                  <c>-118.5022805</c>
+                </r>
+                <r>
+                  <c>1235 2nd Street</c>
+                  <c>34.0168778</c>
+                  <c>-118.4988182</c>
+                </r>
+                <r>
+                  <c>429 Santa Monica</c>
+                  <c>34.0172131</c>
+                  <c>-118.4949269</c>
+                </r>
+                <r>
+                  <c>ParkMe</c>
+                  <c>34.0176572</c>
+                  <c>-118.4940408</c>
+                </r>
+                <r>
+                  <c>best la valet parking</c>
+                  <c>34.018034</c>
+                  <c>-118.304775</c>
+                </r>
+                <r>
+                  <c>1234 4th Street</c>
+                  <c>34.0182031</c>
+                  <c>-118.4977766</c>
+                </r>
+                <r>
+                  <c>ABC American Valet Parking &amp; Shuttle Svcs</c>
+                  <c>34.0194008</c>
+                  <c>-118.4937017</c>
+                </r>
+                <r>
+                  <c>Public Parking 9</c>
+                  <c>34.0196014</c>
+                  <c>-118.4990941</c>
+                </r>
+                <r>
+                  <c>Central Parking</c>
+                  <c>34.0199137</c>
+                  <c>-118.5068231</c>
+                </r>
+                <r>
+                  <c>401 Wilshire Blvd Garage</c>
+                  <c>34.0202594</c>
+                  <c>-118.4989705</c>
+                </r>
+                <r>
+                  <c>USC Shrine Parking Structure</c>
+                  <c>34.0232744</c>
+                  <c>-118.2807136</c>
+                </r>
+                <r>
+                  <c>Watseka Parking</c>
+                  <c>34.0235032</c>
+                  <c>-118.3958317</c>
+                </r>
+                <r>
+                  <c>Classic Parking Inc</c>
+                  <c>34.0238693</c>
+                  <c>-118.2820923</c>
+                </r>
+                <r>
+                  <c>Classic Parking</c>
+                  <c>34.0243474</c>
+                  <c>-118.281295</c>
+                </r>
+                <r>
+                  <c>Cardiff Parking</c>
+                  <c>34.0243891</c>
+                  <c>-118.3952299</c>
+                </r>
+                <r>
+                  <c>Black eXclusive Group, Inc.</c>
+                  <c>34.0274186</c>
+                  <c>-118.3716031</c>
+                </r>
+                <r>
+                  <c>SCLARC Parking Garage</c>
+                  <c>34.0335485</c>
+                  <c>-118.3082006</c>
+                </r>
+                <r>
+                  <c>Washington/Fairfax Park &amp; Ride</c>
+                  <c>34.0343098</c>
+                  <c>-118.369925</c>
+                </r>
+                <r>
+                  <c>Cornerstone Plaza</c>
+                  <c>34.0344766</c>
+                  <c>-118.455919</c>
+                </r>
+                <r>
+                  <c>Expo/Sepulveda Station Park &amp; Ride</c>
+                  <c>34.0347055</c>
+                  <c>-118.4358275</c>
+                </r>
+                <r>
+                  <c>2825 Santa Monica</c>
+                  <c>34.0356183</c>
+                  <c>-118.4722764</c>
+                </r>
+                <r>
+                  <c>11500 Olympic Boulevard</c>
+                  <c>34.0358646</c>
+                  <c>-118.4445499</c>
+                </r>
+                <r>
+                  <c>Will Rogers Beach Parking Lot 3</c>
+                  <c>34.0361042</c>
+                  <c>-118.5370379</c>
+                </r>
+                <r>
+                  <c>Standard Parking</c>
+                  <c>34.0367347</c>
+                  <c>-118.2650983</c>
+                </r>
+                <r>
+                  <c>D C Stages &amp; Sets _ Open 24/7</c>
+                  <c>34.0381229</c>
+                  <c>-118.2335976</c>
+                </r>
+                <r>
+                  <c>Valet Parking Service</c>
+                  <c>34.0392874</c>
+                  <c>-118.2678194</c>
+                </r>
+                <r>
+                  <c>Will Rogers State Beach Parking Lot 5</c>
+                  <c>34.0392974</c>
+                  <c>-118.5587822</c>
+                </r>
+                <r>
+                  <c>ABM</c>
+                  <c>34.0395199</c>
+                  <c>-118.2617072</c>
+                </r>
+                <r>
+                  <c>Bel Air Bay Club Parking Lot</c>
+                  <c>34.0403908</c>
+                  <c>-118.5449565</c>
+                </r>
+                <r>
+                  <c>Classic Parking</c>
+                  <c>34.042101</c>
+                  <c>-118.263688</c>
+                </r>
+                <r>
+                  <c>Palisades Village Center</c>
+                  <c>34.044742</c>
+                  <c>-118.5255749</c>
+                </r>
+                <r>
+                  <c>1964 Parking</c>
+                  <c>34.0474398</c>
+                  <c>-118.434445</c>
+                </r>
+                <r>
+                  <c>Golden State Jewelry</c>
+                  <c>34.0475559</c>
+                  <c>-118.2524339</c>
+                </r>
+                <r>
+                  <c>Standard Parking</c>
+                  <c>34.0478511</c>
+                  <c>-118.261792</c>
+                </r>
+                <r>
+                  <c>Standard Parking</c>
+                  <c>34.0479891</c>
+                  <c>-118.2565708</c>
+                </r>
+                <r>
+                  <c>Brentwood Town Center parking</c>
+                  <c>34.0481761</c>
+                  <c>-118.4911261</c>
+                </r>
+                <r>
+                  <c>PacMutual Parking</c>
+                  <c>34.0487476</c>
+                  <c>-118.254718</c>
+                </r>
+                <r>
+                  <c>Paragon Parking</c>
+                  <c>34.0490301</c>
+                  <c>-118.2474664</c>
+                </r>
+                <r>
+                  <c>Allied Parking Corporation</c>
+                  <c>34.0497016</c>
+                  <c>-118.2479471</c>
+                </r>
+                <r>
+                  <c>Paragon Parking</c>
+                  <c>34.0498252</c>
+                  <c>-118.2566023</c>
+                </r>
+                <r>
+                  <c>Temescal Gateway Park, Mountains Recreation &amp; Conservation Authority</c>
+                  <c>34.0505017</c>
+                  <c>-118.529736</c>
+                </r>
+                <r>
+                  <c>L &amp; R Group of Co</c>
+                  <c>34.0515427</c>
+                  <c>-118.2569367</c>
+                </r>
+                <r>
+                  <c>Koreatown Galleria Parking</c>
+                  <c>34.052161</c>
+                  <c>-118.3078563</c>
+                </r>
+                <r>
+                  <c>Modern Parking Inc</c>
+                  <c>34.0524893</c>
+                  <c>-118.2655015</c>
+                </r>
+                <r>
+                  <c>1055 Wilshire</c>
+                  <c>34.0525613</c>
+                  <c>-118.2627151</c>
+                </r>
+                <r>
+                  <c>Temescal Gateway Park</c>
+                  <c>34.0534752</c>
+                  <c>-118.5286579</c>
+                </r>
+                <r>
+                  <c>Standard Parking</c>
+                  <c>34.0538873</c>
+                  <c>-118.2544489</c>
+                </r>
+                <r>
+                  <c>2030 Century Park West</c>
+                  <c>34.0561223</c>
+                  <c>-118.4166208</c>
+                </r>
+                <r>
+                  <c>Standard Parking</c>
+                  <c>34.0599838</c>
+                  <c>-118.2812135</c>
+                </r>
+                <r>
+                  <c>Vista Hermosa Natural Park, Mountains Recreation &amp; Conservation Authority</c>
+                  <c>34.0619569</c>
+                  <c>-118.2579459</c>
+                </r>
+                <r>
+                  <c>3807 Wilshire</c>
+                  <c>34.0620163</c>
+                  <c>-118.309368</c>
+                </r>
+                <r>
+                  <c>Standard Parking</c>
+                  <c>34.0620554</c>
+                  <c>-118.3192516</c>
+                </r>
+                <r>
+                  <c>4311 Wilshire</c>
+                  <c>34.0620924</c>
+                  <c>-118.3218987</c>
+                </r>
+                <r>
+                  <c>Z Valet</c>
+                  <c>34.0621801</c>
+                  <c>-118.3208354</c>
+                </r>
+                <r>
+                  <c>Party Parking Valet Service</c>
+                  <c>34.0625274</c>
+                  <c>-118.399412</c>
+                </r>
+                <r>
+                  <c>Miracle Mile Tower</c>
+                  <c>34.0626869</c>
+                  <c>-118.3474257</c>
+                </r>
+                <r>
+                  <c>977 N Broadway Parking</c>
+                  <c>34.0661837</c>
+                  <c>-118.2367087</c>
+                </r>
+                <r>
+                  <c>Original Tommy's Parking</c>
+                  <c>34.0699339</c>
+                  <c>-118.2767487</c>
+                </r>
+                <r>
+                  <c>Academy Valet Parking Service, Inc.</c>
+                  <c>34.0758924</c>
+                  <c>-118.3702625</c>
+                </r>
+                <r>
+                  <c>8733 Beverly Building Parking</c>
+                  <c>34.0771229</c>
+                  <c>-118.381576</c>
+                </r>
+                <r>
+                  <c>2660 Westridge Rd Parking</c>
+                  <c>34.0855545</c>
+                  <c>-118.5089807</c>
+                </r>
+                <r>
+                  <c>RUNWAY WAITERS - Event Staffing Agency, Catering, Brand Ambassadors, Promotional Models, Party Staff</c>
+                  <c>34.097646</c>
+                  <c>-118.333408</c>
+                </r>
+                <r>
+                  <c>Swiss Property LLC (Parking Lot Sweeping &amp; Pressure Washing)</c>
+                  <c>34.0982151</c>
+                  <c>-118.3649193</c>
+                </r>
+                <r>
+                  <c>Modern Parking Inc</c>
+                  <c>34.0988075</c>
+                  <c>-118.325465</c>
+                </r>
+                <r>
+                  <c>Standard Parking</c>
+                  <c>34.1012278</c>
+                  <c>-118.3408739</c>
+                </r>
+                <r>
+                  <c>Elyria Canyon Park</c>
+                  <c>34.1020018</c>
+                  <c>-118.2237642</c>
+                </r>
+                <r>
+                  <c>Hollywood &amp; Vine Lot</c>
+                  <c>34.102095</c>
+                  <c>-118.3270025</c>
+                </r>
+                <r>
+                  <c>The Musso &amp; Frank Grill Parking</c>
+                  <c>34.102104</c>
+                  <c>-118.335148</c>
+                </r>
+                <r>
+                  <c>Cherokee And Hollywood Parking Garage</c>
+                  <c>34.1021761</c>
+                  <c>-118.3345798</c>
+                </r>
+                <r>
+                  <c>Hollywood &amp; Highland Parking</c>
+                  <c>34.1022682</c>
+                  <c>-118.3403664</c>
+                </r>
+                <r>
+                  <c>Car Park</c>
+                  <c>34.1023693</c>
+                  <c>-118.3355169</c>
+                </r>
+                <r>
+                  <c>Las Palmas Hotel</c>
+                  <c>34.1026911</c>
+                  <c>-118.336</c>
+                </r>
+                <r>
+                  <c>Motel 6 Parking</c>
+                  <c>34.1028179</c>
+                  <c>-118.3329301</c>
+                </r>
+                <r>
+                  <c>Mission-Meridian Parking Garage</c>
+                  <c>34.1162312</c>
+                  <c>-118.1573839</c>
+                </r>
+                <r>
+                  <c>Franklin Canyon Park, Mountains Recreation &amp; Conservation Authority</c>
+                  <c>34.1230546</c>
+                  <c>-118.4094889</c>
+                </r>
+                <r>
+                  <c>Larry Zarian Transportation Center</c>
+                  <c>34.1236696</c>
+                  <c>-118.2585583</c>
+                </r>
+                <r>
+                  <c>EH Valet Services</c>
+                  <c>34.1240081</c>
+                  <c>-118.268462</c>
+                </r>
+                <r>
+                  <c>Filmore Gold Line Station</c>
+                  <c>34.1331825</c>
+                  <c>-118.1482643</c>
+                </r>
+                <r>
+                  <c>Wilacre Park, Mountains Recreation &amp; Conservation Authority</c>
+                  <c>34.133219</c>
+                  <c>-118.391856</c>
+                </r>
+                <r>
+                  <c>Universal City Hilton</c>
+                  <c>34.1372282</c>
+                  <c>-118.3583938</c>
+                </r>
+                <r>
+                  <c>Frankenstein Parking Garage</c>
+                  <c>34.1382495</c>
+                  <c>-118.3571576</c>
+                </r>
+                <r>
+                  <c>Parkoworld</c>
+                  <c>34.1383729</c>
+                  <c>-118.2665991</c>
+                </r>
+                <r>
+                  <c>Hollywood Bowl Ventura Annex Shuttle Stop</c>
+                  <c>34.1384832</c>
+                  <c>-118.3652005</c>
+                </r>
+                <r>
+                  <c>Universal City Red Line Sta</c>
+                  <c>34.1390306</c>
+                  <c>-118.3625862</c>
+                </r>
+                <r>
+                  <c>Vantage Parking</c>
+                  <c>34.142006</c>
+                  <c>-118.394458</c>
+                </r>
+                <r>
+                  <c>Glendale Galleria Parking Garage</c>
+                  <c>34.1447017</c>
+                  <c>-118.2600073</c>
+                </r>
+                <r>
+                  <c>Parking</c>
+                  <c>34.144857</c>
+                  <c>-118.149976</c>
+                </r>
+                <r>
+                  <c>Americana at Brand Valet</c>
+                  <c>34.144886</c>
+                  <c>-118.2568129</c>
+                </r>
+                <r>
+                  <c>De Lacey Park&amp;Walk Structure</c>
+                  <c>34.1451164</c>
+                  <c>-118.1527097</c>
+                </r>
+                <r>
+                  <c>Joe's Auto Parks Parking</c>
+                  <c>34.1452299</c>
+                  <c>-118.1539433</c>
+                </r>
+                <r>
+                  <c>Unified Parking Service</c>
+                  <c>34.1453243</c>
+                  <c>-118.1481007</c>
+                </r>
+                <r>
+                  <c>Marketplace Parking Structure</c>
+                  <c>34.1454359</c>
+                  <c>-118.253511</c>
+                </r>
+                <r>
+                  <c>Conan O Brien Waiting Area WB Gate8</c>
+                  <c>34.1462537</c>
+                  <c>-118.3341419</c>
+                </r>
+                <r>
+                  <c>One Colorado</c>
+                  <c>34.1465057</c>
+                  <c>-118.149785</c>
+                </r>
+                <r>
+                  <c>48 N Raymond Ave</c>
+                  <c>34.146535</c>
+                  <c>-118.148511</c>
+                </r>
+                <r>
+                  <c>Exchange Parking Garage</c>
+                  <c>34.1474703</c>
+                  <c>-118.2541134</c>
+                </r>
+                <r>
+                  <c>Harvey Park &amp; Ride</c>
+                  <c>34.1474736</c>
+                  <c>-118.2302874</c>
+                </r>
+                <r>
+                  <c>Chuck's Parking Service</c>
+                  <c>34.147508</c>
+                  <c>-118.42626</c>
+                </r>
+                <r>
+                  <c>Parking</c>
+                  <c>34.1485883</c>
+                  <c>-118.1525068</c>
+                </r>
+                <r>
+                  <c>Marriott Park &amp; Walk Structure</c>
+                  <c>34.1488037</c>
+                  <c>-118.1491333</c>
+                </r>
+                <r>
+                  <c>Doctor of Ministry - Fuller Theological Seminary</c>
+                  <c>34.1499946</c>
+                  <c>-118.1381433</c>
+                </r>
+                <r>
+                  <c>Warner Bros. Studio Tour Parking</c>
+                  <c>34.151666</c>
+                  <c>-118.3361049</c>
+                </r>
+                <r>
+                  <c>Modern Parking Inc</c>
+                  <c>34.1526122</c>
+                  <c>-118.2583443</c>
+                </r>
+                <r>
+                  <c>Parking Management Services of America</c>
+                  <c>34.155649</c>
+                  <c>-118.258498</c>
+                </r>
+                <r>
+                  <c>Encino Atrium</c>
+                  <c>34.1573027</c>
+                  <c>-118.4932694</c>
+                </r>
+                <r>
+                  <c>Lot K</c>
+                  <c>34.1581006</c>
+                  <c>-118.1696314</c>
+                </r>
+                <r>
+                  <c>Lot H</c>
+                  <c>34.1584898</c>
+                  <c>-118.1655409</c>
+                </r>
+                <r>
+                  <c>Ampco System Parking</c>
+                  <c>34.1588323</c>
+                  <c>-118.500779</c>
+                </r>
+                <r>
+                  <c>C V Parking Services</c>
+                  <c>34.1599999</c>
+                  <c>-118.4</c>
+                </r>
+                <r>
+                  <c>Sherman Oaks Atrium</c>
+                  <c>34.1649869</c>
+                  <c>-118.4666968</c>
+                </r>
+                <r>
+                  <c>GCC Main Parking Structure</c>
+                  <c>34.1658724</c>
+                  <c>-118.2268452</c>
+                </r>
+                <r>
+                  <c>East West Valet Services</c>
+                  <c>34.166399</c>
+                  <c>-118.457044</c>
+                </r>
+                <r>
+                  <c>Westhills Plaza</c>
+                  <c>34.166614</c>
+                  <c>-118.5840415</c>
+                </r>
+                <r>
+                  <c>Print Providence Tarzana Medical Center</c>
+                  <c>34.1673944</c>
+                  <c>-118.5313435</c>
+                </r>
+                <r>
+                  <c>Galaxy Security Guard</c>
+                  <c>34.1680031</c>
+                  <c>-118.3923483</c>
+                </r>
+                <r>
+                  <c>North Hollywood Station Park and Ride</c>
+                  <c>34.1686248</c>
+                  <c>-118.3765838</c>
+                </r>
+                <r>
+                  <c>AJ Valet Parking Services</c>
+                  <c>34.1787049</c>
+                  <c>-118.3715676</c>
+                </r>
+                <r>
+                  <c>Proper Parking</c>
+                  <c>34.1788386</c>
+                  <c>-118.6020525</c>
+                </r>
+                <r>
+                  <c>North Hollywood Park &amp; Ride lots</c>
+                  <c>34.1793488</c>
+                  <c>-118.394827</c>
+                </r>
+                <r>
+                  <c>6300 Lake Balboa Hiking Trail Parking</c>
+                  <c>34.17945</c>
+                  <c>-118.4963343</c>
+                </r>
+                <r>
+                  <c>Van Nuys Orange Line Station</c>
+                  <c>34.1804817</c>
+                  <c>-118.4486786</c>
+                </r>
+                <r>
+                  <c>Woodley Parking Lot</c>
+                  <c>34.1809561</c>
+                  <c>-118.4835202</c>
+                </r>
+                <r>
+                  <c>Burbank Court House</c>
+                  <c>34.1818554</c>
+                  <c>-118.3064498</c>
+                </r>
+                <r>
+                  <c>Sepulveda Orange Line Station</c>
+                  <c>34.1820217</c>
+                  <c>-118.4685126</c>
+                </r>
+                <r>
+                  <c>Burbank Police Department-Parking</c>
+                  <c>34.1838041</c>
+                  <c>-118.3084979</c>
+                </r>
+                <r>
+                  <c>Farmers Plaza</c>
+                  <c>34.1845304</c>
+                  <c>-118.6021455</c>
+                </r>
+                <r>
+                  <c>Parking Service 2000 Inc</c>
+                  <c>34.1853509</c>
+                  <c>-118.4484323</c>
+                </r>
+                <r>
+                  <c>Balboa Orange Line Station</c>
+                  <c>34.1863531</c>
+                  <c>-118.5000815</c>
+                </r>
+                <r>
+                  <c>Pierce College Station</c>
+                  <c>34.1870437</c>
+                  <c>-118.5714872</c>
+                </r>
+                <r>
+                  <c>Canoga Orange Line Station</c>
+                  <c>34.1907235</c>
+                  <c>-118.5969481</c>
+                </r>
+                <r>
+                  <c>Southwest Parking</c>
+                  <c>34.1934662</c>
+                  <c>-118.3557897</c>
+                </r>
+                <r>
+                  <c>Noble Avenue Parking Structure</c>
+                  <c>34.1945126</c>
+                  <c>-118.461395</c>
+                </r>
+                <r>
+                  <c>Campus Parking Structure</c>
+                  <c>34.1953381</c>
+                  <c>-118.4647713</c>
+                </r>
+                <r>
+                  <c>VSP Parking</c>
+                  <c>34.1961705</c>
+                  <c>-118.3478377</c>
+                </r>
+                <r>
+                  <c>Sherman Way Orange Line Station</c>
+                  <c>34.1998228</c>
+                  <c>-118.5968876</c>
+                </r>
+                <r>
+                  <c>Isaacâs Ironworks, Inc</c>
+                  <c>34.2049741</c>
+                  <c>-118.4212341</c>
+                </r>
+                <r>
+                  <c>Electric Charging Station</c>
+                  <c>34.2085161</c>
+                  <c>-118.4473351</c>
+                </r>
+                <r>
+                  <c>ATS Truck Stop (parking/storage)</c>
+                  <c>34.2200309</c>
+                  <c>-118.3805716</c>
+                </r>
+                <r>
+                  <c>Free Parking</c>
+                  <c>34.2203528</c>
+                  <c>-118.5358495</c>
+                </r>
+                <r>
+                  <c>14500 Roscoe Blvd Parking</c>
+                  <c>34.2211723</c>
+                  <c>-118.4492141</c>
+                </r>
+                <r>
+                  <c>US Gate Supply | North Hollywood</c>
+                  <c>34.221764</c>
+                  <c>-118.388293</c>
+                </r>
+                <r>
+                  <c>Ram Paving Inc.</c>
+                  <c>34.2306994</c>
+                  <c>-118.3739181</c>
+                </r>
+                <r>
+                  <c>Truck Parking</c>
+                  <c>34.2385573</c>
+                  <c>-118.3791923</c>
+                </r>
+                <r>
+                  <c>Parking Lot B4</c>
+                  <c>34.2391361</c>
+                  <c>-118.5338243</c>
+                </r>
+                <r>
+                  <c>CSUN Parking Lot â F10</c>
+                  <c>34.2509674</c>
+                  <c>-118.5264714</c>
+                </r>
+                <r>
+                  <c>Chatsworth Orange Line Station Lot B</c>
+                  <c>34.2549446</c>
+                  <c>-118.5991954</c>
+                </r>
+                <r>
+                  <c>Granada Hills Park / Ride</c>
+                  <c>34.264865</c>
+                  <c>-118.470426</c>
+                </r>
+                <r>
+                  <c>Park &amp; Ride Porter Ranch</c>
+                  <c>34.2724258</c>
+                  <c>-118.5701055</c>
+                </r>
+                <r>
+                  <c>Original Parking Services - Valet Parking</c>
+                  <c>34.2779184</c>
+                  <c>-118.5848053</c>
+                </r>
+                <r>
+                  <c>San Fernando Court B</c>
+                  <c>34.2827645</c>
+                  <c>-118.4388562</c>
+                </r>
+                <r>
+                  <c>Sylmar Metrolink Station</c>
+                  <c>34.2926163</c>
+                  <c>-118.4496923</c>
+                </r>
+                <r>
+                  <c>17300 O'Melveny Park Parking</c>
+                  <c>34.3078844</c>
+                  <c>-118.5109765</c>
+                </r>
+                <r>
+                  <c>Wilson Canyon Park</c>
+                  <c>34.3248794</c>
+                  <c>-118.4410902</c>
+                </r>
+              </Data>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTextInput" />
+        </Node>
+      </ChildNodes>
+    </Node>
+    <Node ToolID="26">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="54" y="198" width="118" height="133" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>Input2</Caption>
+          <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="25" />
+          <Disabled value="False" />
+          <Folded value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="24">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.TextInput.TextInput">
+            <Position x="79" y="247" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <NumRows value="5" />
+              <Fields>
+                <Field name="Area" />
+                <Field name="Longitude" />
+                <Field name="Latitude" />
+              </Fields>
+              <Data>
+                <r>
+                  <c>0</c>
+                  <c>-118.234348</c>
+                  <c>34.062046</c>
+                </r>
+                <r>
+                  <c>1</c>
+                  <c>-118.239155</c>
+                  <c>34.023356</c>
+                </r>
+                <r>
+                  <c>2</c>
+                  <c>-118.274517</c>
+                  <c>34.039858</c>
+                </r>
+                <r>
+                  <c>3</c>
+                  <c>-118.246193</c>
+                  <c>34.068303</c>
+                </r>
+                <r>
+                  <c>4</c>
+                  <c>-118.234348</c>
+                  <c>34.062046</c>
+                </r>
+              </Data>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTextInput" />
+        </Node>
+      </ChildNodes>
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="4" Connection="Output" />
+      <Destination ToolID="5" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="4" Connection="Output" />
+      <Destination ToolID="32" Connection="Universe" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="31" Connection="Output" />
+      <Destination ToolID="32" Connection="Targets" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="5" Connection="Output" />
+      <Destination ToolID="17" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="5" Connection="Output" />
+      <Destination ToolID="9" Connection="Targets" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="7" Connection="Output" />
+      <Destination ToolID="9" Connection="Universe" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="7" Connection="Output" />
+      <Destination ToolID="14" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="8" Connection="Output" />
+      <Destination ToolID="15" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="8" Connection="Output" />
+      <Destination ToolID="7" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="9" Connection="Matched" />
+      <Destination ToolID="10" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="10" Connection="Output" />
+      <Destination ToolID="11" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="10" Connection="Output" />
+      <Destination ToolID="16" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="11" Connection="Output" />
+      <Destination ToolID="12" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="12" Connection="Output" />
+      <Destination ToolID="13" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="13" Connection="Output" />
+      <Destination ToolID="19" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="19" Connection="Output" />
+      <Destination ToolID="20" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="20" Connection="Output" />
+      <Destination ToolID="29" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="27" Connection="Output" />
+      <Destination ToolID="4" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="28" Connection="Output" />
+      <Destination ToolID="8" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="30" Connection="Output" />
+      <Destination ToolID="31" Connection="Input" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <PredictiveToolsCodePage value="1252" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="False" />
+    <ShowConnectionStatusIsOn value="True" />
+    <ShowConnectionStatusOnlyWhenRunning value="True" />
+    <ZoomLevel value="0" />
+    <LayoutType>Horizontal</LayoutType>
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name>question3</Name>
+      <Description />
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author />
+      <Company />
+      <Copyright />
+      <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
+      <WorkflowId value="f2a2a213-2671-4ec2-ab3f-e20963d410ea" />
+      <Telemetry>
+        <PreviousWorkflowId value="c044715a-10b4-47b7-a8e9-efa210ed6c55" />
+        <OriginWorkflowId value="bc6e3b53-606f-4c36-9436-47b5c1bd43d0" />
+      </Telemetry>
+      <PlatformWorkflowId value="" />
+    </MetaInfo>
+    <Events>
+      <Enabled value="True" />
+    </Events>
+  </Properties>
+</AlteryxDocument>
